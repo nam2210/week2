@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">exercise2</string>
+    <string name="edit_background">Change Background</string>
+    <string name="edit_title">Change Title</string>
+    <string name="todo">TODO</string>
+    <string name="save">Save</string>
+</resources>
