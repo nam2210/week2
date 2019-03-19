@@ -37,6 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:onClick="onClickColor1"
                 android:background="@color/pink"
                 android:contentDescription="@string/todo" />
 
@@ -45,6 +46,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:onClick="onClickColor2"
                 android:background="@color/purple"
                 android:contentDescription="@string/todo"/>
 
@@ -53,6 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:onClick="onClickColor3"
                 android:background="@color/indigo"
                 android:contentDescription="@string/todo"/>
 
@@ -67,6 +70,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:onClick="onClickColor4"
                 android:background="@color/blue"
                 android:contentDescription="@string/todo" />
 
@@ -75,6 +79,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:onClick="onClickColor5"
                 android:background="@color/teal"
                 android:contentDescription="@string/todo"/>
 
@@ -83,6 +88,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:onClick="onClickColor6"
                 android:background="@color/green"
                 android:contentDescription="@string/todo"/>
 
@@ -96,6 +102,7 @@
         android:id="@+id/btnSave"
         android:layout_below="@id/tableLayout"
         android:text="@string/save"
+        android:onClick="onBackClick"
         android:layout_marginTop="16dp"/>
 
 
