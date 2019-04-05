@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-
         private val REQUEST_EDT_TITLE = 1
         private val REQUEST_EDT_BG = 2
     }
