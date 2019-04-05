@@ -36,50 +36,5 @@ class SettingTitleActivity : AppCompatActivity() {
 
     }
 
-    fun onClickColor1(view: View) {
-        //pink
-        colorPosition = 0
-        viewSample!!.setBackgroundColor(ContextCompat.getColor(this, R.color.pink))
-    }
-
-    fun onClickColor2(view: View) {
-        //purple
-        colorPosition = 1
-        viewSample!!.setBackgroundColor(ContextCompat.getColor(this, R.color.purple))
-    }
-
-    fun onClickColor3(view: View) {
-        //indigo
-        colorPosition = 2
-        viewSample!!.setBackgroundColor(ContextCompat.getColor(this, R.color.indigo))
-    }
-
-    fun onClickColor4(view: View) {
-        //blue
-        colorPosition = 3
-        viewSample!!.setBackgroundColor(ContextCompat.getColor(this, R.color.blue))
-    }
-
-    fun onClickColor5(view: View) {
-        //teal
-        colorPosition = 4
-        viewSample!!.setBackgroundColor(ContextCompat.getColor(this, R.color.teal))
-    }
-
-    fun onClickColor6(view: View) {
-        //green
-        colorPosition = 5
-        viewSample!!.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
-    }
-
-    fun onBackClick(view: View) {
-        val text = edt!!.text.toString()
-        val i = Intent()
-        i.putExtra("color_id", colorPosition)
-        i.putExtra("title", text)
-        setResult(Activity.RESULT_OK, i)
-        finish()
-    }
-
 
 }

@@ -13,26 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_edit_bg.setOnClickListener {
-            val i = Intent(this, SettingBackgroundActivity::class.java)
-            i.putExtra("key_string", "value_string")
-            i.putExtra("key_int", 1)
-            i.putExtra("key_boolean", true)
-            startActivity(i)
+        //todo #1 click nút edt title  ra màn hình SettingTitleActivity
 
+        //todo #2 click nút edit background nhảy ra màn hình EditBackgroundActivity
 
-            val data = intent.extras
-            if (data != null) {
-                val stringValue = data.getString("key_string")
-                val intValue = data.getInt("key_int")
-                val boolValue = data.getBoolean("key_boolean")
-            }
-        }
-
-        btn_edit_title.setOnClickListener {
-            val i = Intent(this, SettingTitleActivity::class.java)
-            startActivityForResult(i, REQUEST_EDT_TITLE)
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -40,11 +24,8 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == REQUEST_EDT_BG) {
             //todo get data
         } else if (requestCode == REQUEST_EDT_TITLE) {
-            if (resultCode == Activity.RESULT_OK) {
-                val positionColor = data?.getIntExtra("color_id", -1)
-                val title = data?.getStringExtra("title")
-                handleDataOfTitle(positionColor, title)
-            }
+            //todo #3 nhận dữ liệu trả về từ EditSettingActivity
+
         }
     }
 
