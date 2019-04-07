@@ -12,12 +12,15 @@
         android:layout_weight="1">
         <ImageView
             android:id="@+id/ivBg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="124dp"
+            android:layout_height="124dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
             android:src="@drawable/shutterstock_130125752_huge"
             />
         <TextView
             android:id="@+id/tvTitle"
+            android:layout_below="@id/ivBg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
