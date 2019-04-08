@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     var drawableId = R.drawable.angular
+    var colorInex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,14 +19,17 @@ class MainActivity : AppCompatActivity() {
 
         btn_edit_bg.setOnClickListener {
             val i = Intent(this, SettingBackgroundActivity::class.java)
+            i.putExtra(DRAWABALE_ID, drawableId)
             startActivityForResult(i, REQUEST_EDT_BG)
         }
 
         btn_edit_title.setOnClickListener {
             val i = Intent(this, SettingTitleActivity::class.java)
+            i.putExtra(TITLE, tvTitle.text.toString().trim())
+            i.putExtra(COLOR_INDEX, colorInex)
             startActivityForResult(i, REQUEST_EDT_TITLE)
         }
-
+        title = "Main"
         Picasso.get().load(drawableId).into(ivBg)
 
     }
@@ -34,12 +38,12 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_EDT_BG) {
             if (resultCode == Activity.RESULT_OK){
-                val drawableId = data?.getIntExtra(DRAWABALE_ID, R.drawable.angular)
+                drawableId = data?.getIntExtra(DRAWABALE_ID, R.drawable.angular)!!
                 Picasso.get().load(drawableId!!).into(ivBg)
             }
         } else if (requestCode == REQUEST_EDT_TITLE) {
             if (resultCode == Activity.RESULT_OK) {
-                val positionColor = data?.getIntExtra(COLOR_ID, -1)
+                val positionColor = data?.getIntExtra(COLOR_INDEX, -1)
                 val title = data?.getStringExtra(TITLE)
                 handleDataOfTitle(positionColor, title)
             }
@@ -49,14 +53,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun handleDataOfTitle(positionColor: Int?, title: String?) {
-        when (positionColor) {
-            0 -> tvTitle!!.setTextColor(ContextCompat.getColor(this, R.color.pink))
-            1 -> tvTitle!!.setTextColor(ContextCompat.getColor(this, R.color.purple))
-            2 -> tvTitle!!.setTextColor(ContextCompat.getColor(this, R.color.indigo))
-            3 -> tvTitle!!.setTextColor(ContextCompat.getColor(this, R.color.blue))
-            4 -> tvTitle!!.setTextColor(ContextCompat.getColor(this, R.color.teal))
-            5 -> tvTitle!!.setTextColor(ContextCompat.getColor(this, R.color.green))
-        }
+        tvTitle!!.setTextColor(ContextCompat.getColor(this, Utils.generateColorIdFromIndex(positionColor!!)))
+        colorInex = positionColor
         tvTitle!!.text = title
     }
 

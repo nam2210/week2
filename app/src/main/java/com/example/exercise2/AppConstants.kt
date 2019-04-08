@@ -5,5 +5,5 @@ package com.example.exercise2
  */
 
 const val DRAWABALE_ID = "drawable_id"
-const val COLOR_ID = "color_id"
+const val COLOR_INDEX = "color_id"
 const val TITLE = "title"

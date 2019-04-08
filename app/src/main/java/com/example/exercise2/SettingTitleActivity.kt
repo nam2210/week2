@@ -18,6 +18,12 @@ class SettingTitleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting_title)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        val bundle = intent.extras
+        val text = bundle?.getString(TITLE, "")
+        val colorIndex = bundle?.getInt(COLOR_INDEX, 0)
+        edt.setText(text)
+        viewSample!!.setBackgroundColor(ContextCompat.getColor(this, Utils.generateColorIdFromIndex(colorIndex ?: 0)))
+        title = "Title"
     }
 
     override fun onDestroy() {
